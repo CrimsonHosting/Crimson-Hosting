@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crimson Hosting — Web Design & Hosting That Performs</title>
+  <meta name="description" content="Crimson Hosting builds fast, elegant websites and delivers reliable hosting, performance optimization, and ongoing support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ======================= NAVBAR ======================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">Crimson<span class="accent">Hosting</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#team">Team</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="container hero-inner reveal">
+      <span class="eyebrow">// Web Design • Hosting • Performance</span>
+      <h1 class="hero-title">
+        Websites built to <span class="accent-text">perform</span>.<br />
+        Hosting that never <span class="accent-text">sleeps</span>.
+      </h1>
+      <p class="hero-sub">
+        Crimson Hosting designs, builds, and powers high-performance websites for
+        ambitious brands. Beautiful on the outside. Lightning fast under the hood.
+      </p>
+      <div class="hero-cta">
+        <a href="#services" class="btn btn-primary">Get Started →</a>
+        <a href="#portfolio" class="btn btn-ghost">View Our Work</a>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>99.9%</strong><span>Uptime</span></div>
+        <div><strong>&lt; 1s</strong><span>Load time</span></div>
+        <div><strong>24/7</strong><span>Support</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= ABOUT ======================= -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">What We Do</span>
+        <h2>Everything your website needs — under one roof.</h2>
+        <p class="section-sub">
+          From pixel-perfect design to bulletproof hosting, we handle the full
+          lifecycle of your website so you can focus on your business.
+        </p>
+      </div>
+
+      <div class="grid grid-4 reveal">
+        <div class="card feature">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 20h8"/></svg>
+          </div>
+          <h3>Website Design</h3>
+          <p>Custom-crafted designs that reflect your brand and convert visitors.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="6" rx="1.5"/><rect x="3" y="13" width="18" height="6" rx="1.5"/><circle cx="7" cy="8" r=".9" fill="currentColor"/><circle cx="7" cy="16" r=".9" fill="currentColor"/></svg>
+          </div>
+          <h3>Website Hosting</h3>
+          <p>Fast, secure, and scalable hosting with global CDN and SSL included.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+          </div>
+          <h3>Performance Optimization</h3>
+          <p>Sub-second load times, Core Web Vitals tuning, and SEO-friendly builds.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+          </div>
+          <h3>Ongoing Support</h3>
+          <p>Dedicated team on call — updates, fixes, and improvements, always.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SERVICES / PRICING ======================= -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Packages</span>
+        <h2>Pick the plan that fits your ambition.</h2>
+        <p class="section-sub">Transparent pricing. No hidden fees. Upgrade or cancel anytime.</p>
+      </div>
+
+      <div class="grid grid-3 pricing reveal">
+        <!-- BRONZE -->
+        <div class="card tier">
+          <div class="tier-head">
+            <h3>Bronze</h3>
+            <p class="tier-tag">For starters & personal sites</p>
+          </div>
+          <div class="price"><span class="currency">$</span><span class="amount">XX</span><span class="per">/mo</span></div>
+          <ul class="features">
+            <li>Up to 5-page website</li>
+            <li>Responsive design</li>
+            <li>Basic hosting &amp; SSL</li>
+            <li>Contact form</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Choose Plan</a>
+        </div>
+
+        <!-- SILVER (best value) -->
+        <div class="card tier popular">
+          <div class="badge">Best Value</div>
+          <div class="tier-head">
+            <h3>Silver</h3>
+            <p class="tier-tag">For growing businesses</p>
+          </div>
+          <div class="price"><span class="currency">$</span><span class="amount">XX</span><span class="per">/mo</span></div>
+          <ul class="features">
+            <li>Up to 15-page website</li>
+            <li>Premium design &amp; animations</li>
+            <li>Fast hosting + global CDN</li>
+            <li>SEO optimization</li>
+            <li>Monthly performance reports</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Choose Plan</a>
+        </div>
+
+        <!-- GOLD -->
+        <div class="card tier">
+          <div class="tier-head">
+            <h3>Gold</h3>
+            <p class="tier-tag">For serious brands</p>
+          </div>
+          <div class="price"><span class="currency">$</span><span class="amount">XX</span><span class="per">/mo</span></div>
+          <ul class="features">
+            <li>Unlimited pages</li>
+            <li>Custom integrations &amp; CMS</li>
+            <li>Enterprise hosting &amp; backups</li>
+            <li>Advanced SEO &amp; analytics</li>
+            <li>Dedicated account manager</li>
+            <li>24/7 priority support</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Choose Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PORTFOLIO ======================= -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Portfolio</span>
+        <h2>Before &amp; after.</h2>
+        <p class="section-sub">Hover or drag the slider to see the transformation.</p>
+      </div>
+
+      <div class="grid grid-3 reveal">
+        <!-- ITEM 1 -->
+        <figure class="portfolio-item">
+          <div class="compare" data-compare>
+            <img class="after" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=80" alt="After" />
+            <div class="before-wrap">
+              <img class="before" src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1200&q=80" alt="Before" />
+            </div>
+            <div class="slider" aria-hidden="true"></div>
+            <span class="tag before-tag">Before</span>
+            <span class="tag after-tag">After</span>
+          </div>
+          <figcaption>
+            <h4>Client Project #1</h4>
+            <p>Redesigned for clarity — conversions up, bounce rate down.</p>
+          </figcaption>
+        </figure>
+
+        <!-- ITEM 2 -->
+        <figure class="portfolio-item">
+          <div class="compare" data-compare>
+            <img class="after" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="After" />
+            <div class="before-wrap">
+              <img class="before" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Before" />
+            </div>
+            <div class="slider" aria-hidden="true"></div>
+            <span class="tag before-tag">Before</span>
+            <span class="tag after-tag">After</span>
+          </div>
+          <figcaption>
+            <h4>Client Project #2</h4>
+            <p>Performance rebuild — page speed score jumped from 42 to 98.</p>
+          </figcaption>
+        </figure>
+
+        <!-- ITEM 3 -->
+        <figure class="portfolio-item">
+          <div class="compare" data-compare>
+            <img class="after" src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=1200&q=80" alt="After" />
+            <div class="before-wrap">
+              <img class="before" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Before" />
+            </div>
+            <div class="slider" aria-hidden="true"></div>
+            <span class="tag before-tag">Before</span>
+            <span class="tag after-tag">After</span>
+          </div>
+          <figcaption>
+            <h4>Client Project #3</h4>
+            <p>Full rebrand + hosting migration — zero downtime.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= WHY CHOOSE US ======================= -->
+  <section class="section why" id="why">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Crimson</span>
+        <h2>Built on speed. Backed by people.</h2>
+      </div>
+
+      <div class="grid grid-4 reveal">
+        <div class="card why-card">
+          <div class="icon-lg">⚡</div>
+          <h3>Fast Turnaround</h3>
+          <p>Launch in weeks, not months. We move at the speed of your business.</p>
+        </div>
+        <div class="card why-card">
+          <div class="icon-lg">🔍</div>
+          <h3>SEO-Optimized Builds</h3>
+          <p>Clean code, semantic markup, and structured data — ranked for results.</p>
+        </div>
+        <div class="card why-card">
+          <div class="icon-lg">🛡️</div>
+          <h3>Reliable Hosting</h3>
+          <p>99.9% uptime, automatic backups, SSL, and a global CDN as standard.</p>
+        </div>
+        <div class="card why-card">
+          <div class="icon-lg">🤝</div>
+          <h3>Ongoing Support</h3>
+          <p>A real team — not a ticket queue. Reach us whenever you need us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= TEAM ======================= -->
+  <section class="section team" id="team">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Team</span>
+        <h2>The people behind the pixels.</h2>
+      </div>
+
+      <div class="grid grid-4 reveal">
+        <div class="card team-card">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Team member" /></div>
+          <h3>[Name Placeholder]</h3>
+          <p class="role">Founder &amp; CEO</p>
+          <div class="socials"><a href="#">in</a><a href="#">tw</a></div>
+        </div>
+
+        <div class="card team-card">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Team member" /></div>
+          <h3>[Name Placeholder]</h3>
+          <p class="role">Lead Designer</p>
+          <div class="socials"><a href="#">in</a><a href="#">tw</a></div>
+        </div>
+
+        <div class="card team-card">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80" alt="Team member" /></div>
+          <h3>[Name Placeholder]</h3>
+          <p class="role">Senior Developer</p>
+          <div class="socials"><a href="#">in</a><a href="#">tw</a></div>
+        </div>
+
+        <div class="card team-card">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80" alt="Team member" /></div>
+          <h3>[Name Placeholder]</h3>
+          <p class="role">Support Lead</p>
+          <div class="socials"><a href="#">in</a><a href="#">tw</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= TESTIMONIALS ======================= -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Testimonials</span>
+        <h2>Loved by teams that care about details.</h2>
+      </div>
+
+      <div class="grid grid-3 reveal">
+        <div class="card quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Crimson Hosting rebuilt our site in 3 weeks. Load times dropped, leads doubled. Easy call."</blockquote>
+          <div class="author">— [Client Name], [Company]</div>
+        </div>
+        <div class="card quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The team feels like an extension of ours. Responsive, sharp, and always two steps ahead."</blockquote>
+          <div class="author">— [Client Name], [Company]</div>
+        </div>
+        <div class="card quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Hosting has been rock solid. Zero downtime since we migrated. Wish we switched sooner."</blockquote>
+          <div class="author">— [Client Name], [Company]</div>
+        </div>
+        <div class="card quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Gorgeous design, blazing fast performance. Everything we asked for — and more."</blockquote>
+          <div class="author">— [Client Name], [Company]</div>
+        </div>
+        <div class="card quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Support replies in minutes. Not days. That alone is worth the price."</blockquote>
+          <div class="author">— [Client Name], [Company]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTACT ======================= -->
+  <section class="section contact" id="contact">
+    <div class="container contact-inner">
+      <div class="section-head reveal" style="text-align:left;">
+        <span class="eyebrow">Get in Touch</span>
+        <h2>Let's build something <span class="accent-text">bold</span>.</h2>
+        <p class="section-sub">
+          Tell us about your project. We'll reply within one business day.
+        </p>
+
+        <ul class="contact-info">
+          <li><strong>Email:</strong> <a href="mailto:hello@crimsonhosting.com">hello@crimsonhosting.com</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+1000000000">[+1 (000) 000-0000]</a></li>
+          <li><strong>Hours:</strong> Mon–Fri, 9am–6pm</li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+          <small class="error" data-error-for="name"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required />
+          <small class="error" data-error-for="email"></small>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your project…" required></textarea>
+          <small class="error" data-error-for="message"></small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        <p class="form-success" id="formSuccess">Thanks — your message is on its way. We'll be in touch shortly.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <span class="logo-mark"></span>
+          <span class="logo-text">Crimson<span class="accent">Hosting</span></span>
+        </a>
+        <p>Web design, hosting, and performance for ambitious brands.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="#">Twitter / X</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+        <a href="#">GitHub</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@crimsonhosting.com">hello@crimsonhosting.com</a>
+        <a href="tel:+1000000000">[+1 (000) 000-0000]</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Crimson Hosting. All rights reserved.</span>
+      <span>Crafted with care.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
