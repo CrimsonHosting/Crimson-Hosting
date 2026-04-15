@@ -20,6 +20,15 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+ const logo = document.getElementById('logo');
+  const onScroll2 = () => {
+    if (window.scrollY > 67) logo.classList.add('scrolled');
+    else logo.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll2, { passive: true });
+  onScroll2();
+
+
   /* -------- Mobile menu toggle -------- */
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');

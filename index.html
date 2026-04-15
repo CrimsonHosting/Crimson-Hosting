@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="Logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crimson Hosting — Web Design & Hosting That Performs</title>
+  <title>Crimson Hosting</title>
   <meta name="description" content="Crimson Hosting builds fast, elegant websites and delivers reliable hosting, performance optimization, and ongoing support." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,11 +16,12 @@
   <!-- ======================= NAVBAR ======================= -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="#hero" class="logo">
+      <a href="#hero" class="logo" id="logo">
         <span class="logo-mark"></span>
-        <span class="logo-text">Crimson<span class="accent">Hosting</span></span>
+        <span class="logo-text" id="logo">Crimson<span class="accent">Hosting</span></span>
       </a>
-
+      </div>
+<div class="container nav-inner">
       <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -27,7 +29,9 @@
         <a href="#team">Team</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
+        <!--
         <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+        -->
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -45,24 +49,30 @@
     </div>
 
     <div class="container hero-inner reveal">
+      <!--
       <span class="eyebrow">// Web Design • Hosting • Performance</span>
+      -->
       <h1 class="hero-title">
-        Websites built to <span class="accent-text">perform</span>.<br />
-        Hosting that never <span class="accent-text">sleeps</span>.
+        Websites built to perform.
+        Hosting that never sleeps.
       </h1>
+      <!--
       <p class="hero-sub">
         Crimson Hosting designs, builds, and powers high-performance websites for
-        ambitious brands. Beautiful on the outside. Lightning fast under the hood.
+        businesses.
       </p>
+      -->
       <div class="hero-cta">
-        <a href="#services" class="btn btn-primary">Get Started →</a>
         <a href="#portfolio" class="btn btn-ghost">View Our Work</a>
       </div>
 
       <div class="hero-stats">
+  
         <div><strong>99.9%</strong><span>Uptime</span></div>
         <div><strong>&lt; 1s</strong><span>Load time</span></div>
+       
         <div><strong>24/7</strong><span>Support</span></div>
+       
       </div>
     </div>
   </section>
@@ -71,12 +81,16 @@
   <section class="section about" id="about">
     <div class="container">
       <div class="section-head reveal">
+        <!--
         <span class="eyebrow">What We Do</span>
-        <h2>Everything your website needs — under one roof.</h2>
+        -->
+        <h2>What We Do</h2>
+        <!--
         <p class="section-sub">
           From pixel-perfect design to bulletproof hosting, we handle the full
           lifecycle of your website so you can focus on your business.
         </p>
+      -->
       </div>
 
       <div class="grid grid-4 reveal">
@@ -84,23 +98,23 @@
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 20h8"/></svg>
           </div>
-          <h3>Website Design</h3>
-          <p>Custom-crafted designs that reflect your brand and convert visitors.</p>
+          <h3>Design</h3>
+          <p>Creative and responsive web designs that reflect your brand.</p>
         </div>
 
         <div class="card feature">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="6" rx="1.5"/><rect x="3" y="13" width="18" height="6" rx="1.5"/><circle cx="7" cy="8" r=".9" fill="currentColor"/><circle cx="7" cy="16" r=".9" fill="currentColor"/></svg>
           </div>
-          <h3>Website Hosting</h3>
-          <p>Fast, secure, and scalable hosting with global CDN and SSL included.</p>
+          <h3>Host</h3>
+          <p>Scaleable and reliable hosting solutions for your website.</p>
         </div>
 
         <div class="card feature">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
           </div>
-          <h3>Performance Optimization</h3>
+          <h3>Optimize</h3>
           <p>Sub-second load times, Core Web Vitals tuning, and SEO-friendly builds.</p>
         </div>
 
@@ -108,8 +122,8 @@
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
           </div>
-          <h3>Ongoing Support</h3>
-          <p>Dedicated team on call — updates, fixes, and improvements, always.</p>
+          <h3>Protect</h3>
+          <p>Safe and secure hosting with built-in protection against threats and attacks.</p>
         </div>
       </div>
     </div>
@@ -119,7 +133,9 @@
   <section class="section services" id="services">
     <div class="container">
       <div class="section-head reveal">
+<!--
         <span class="eyebrow">Packages</span>
+-->
         <h2>Pick the plan that fits your ambition.</h2>
         <p class="section-sub">Transparent pricing. No hidden fees. Upgrade or cancel anytime.</p>
       </div>
@@ -178,15 +194,25 @@
           </ul>
           <a href="#contact" class="btn btn-outline">Choose Plan</a>
         </div>
+        
       </div>
-    </div>
-  </section>
+      <div style="height: 100%;"> </div>
+      
+ 
 
+    </div>
+<div  style="height: 100%;  margin-left: 45%; width: 10%; display: flex; align-items: center; margin-top: 5%; ">
+              <button type="submit"  class="btn btn-primary btn-block" >More Info</button>
+            </div>
+  </section>
+  
   <!-- ======================= PORTFOLIO ======================= -->
   <section class="section portfolio" id="portfolio">
     <div class="container">
       <div class="section-head reveal">
+        <!--
         <span class="eyebrow">Portfolio</span>
+        -->
         <h2>Before &amp; after.</h2>
         <p class="section-sub">Hover or drag the slider to see the transformation.</p>
       </div>
@@ -242,6 +268,8 @@
             <p>Full rebrand + hosting migration — zero downtime.</p>
           </figcaption>
         </figure>
+
+
       </div>
     </div>
   </section>
@@ -250,30 +278,34 @@
   <section class="section why" id="why">
     <div class="container">
       <div class="section-head reveal">
+<!--
         <span class="eyebrow">Why Crimson</span>
-        <h2>Built on speed. Backed by people.</h2>
+-->
+        <h2>Why Us?</h2>
       </div>
 
       <div class="grid grid-4 reveal">
         <div class="card why-card">
-          <div class="icon-lg">⚡</div>
-          <h3>Fast Turnaround</h3>
-          <p>Launch in weeks, not months. We move at the speed of your business.</p>
+          
+          <div class="icon-lg">😤</div>
+          
+          <h3>Dedication</h3>
+          <p>We won't stop until you're completely satisfied.</p>
         </div>
         <div class="card why-card">
-          <div class="icon-lg">🔍</div>
-          <h3>SEO-Optimized Builds</h3>
-          <p>Clean code, semantic markup, and structured data — ranked for results.</p>
+          <div class="icon-lg">▨</div>
+          <h3>Transparency</h3>
+          <p>We believe in open communication and honest feedback.</p>
         </div>
         <div class="card why-card">
-          <div class="icon-lg">🛡️</div>
-          <h3>Reliable Hosting</h3>
-          <p>99.9% uptime, automatic backups, SSL, and a global CDN as standard.</p>
+          <div class="icon-lg">🤓</div>
+          <h3>Eager</h3>
+          <p>We are enthusiastic about delivering exceptional results.</p>
         </div>
         <div class="card why-card">
           <div class="icon-lg">🤝</div>
-          <h3>Ongoing Support</h3>
-          <p>A real team — not a ticket queue. Reach us whenever you need us.</p>
+          <h3>Partnership</h3>
+          <p>You be come a part of our team to achieve your business goals.</p>
         </div>
       </div>
     </div>
@@ -283,24 +315,29 @@
   <section class="section team" id="team">
     <div class="container">
       <div class="section-head reveal">
+        <!--
         <span class="eyebrow">Our Team</span>
-        <h2>The people behind the pixels.</h2>
+-->
+        <h2>The people behind the progress.</h2>
       </div>
 
       <div class="grid grid-4 reveal">
+        <div></div> <!-- empty cell for spacing -->
         <div class="card team-card">
           <div class="avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Team member" /></div>
-          <h3>[Name Placeholder]</h3>
-          <p class="role">Founder &amp; CEO</p>
-          <div class="socials"><a href="#">in</a><a href="#">tw</a></div>
+          <h3>Mohammed Suleiman</h3>
+          <p class="role">Co-Founder</p>
+          <div class="socials"><a href="#">in</a></div>
         </div>
 
         <div class="card team-card">
           <div class="avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Team member" /></div>
-          <h3>[Name Placeholder]</h3>
-          <p class="role">Lead Designer</p>
-          <div class="socials"><a href="#">in</a><a href="#">tw</a></div>
+          <h3>Elliot Scarengos</h3>
+          <p class="role">Co-Founder</p>
+          <div class="socials"><a href="#">in</a></div>
         </div>
+
+        <!--
 
         <div class="card team-card">
           <div class="avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80" alt="Team member" /></div>
@@ -315,6 +352,8 @@
           <p class="role">Support Lead</p>
           <div class="socials"><a href="#">in</a><a href="#">tw</a></div>
         </div>
+
+        -->
       </div>
     </div>
   </section>
@@ -323,26 +362,30 @@
   <section class="section testimonials" id="testimonials">
     <div class="container">
       <div class="section-head reveal">
+        <!--
         <span class="eyebrow">Testimonials</span>
-        <h2>Loved by teams that care about details.</h2>
+        -->
+        <h2>What People Say</h2>
       </div>
 
       <div class="grid grid-3 reveal">
         <div class="card quote">
           <div class="stars">★★★★★</div>
-          <blockquote>"Crimson Hosting rebuilt our site in 3 weeks. Load times dropped, leads doubled. Easy call."</blockquote>
-          <div class="author">— [Client Name], [Company]</div>
+          <blockquote>"Words"</blockquote>
+          <div class="author">— [Client Name], [Business]</div>
         </div>
         <div class="card quote">
           <div class="stars">★★★★★</div>
-          <blockquote>"The team feels like an extension of ours. Responsive, sharp, and always two steps ahead."</blockquote>
-          <div class="author">— [Client Name], [Company]</div>
+          <blockquote>"Words"</blockquote>
+          <div class="author">— [Client Name], [Business]</div>
         </div>
         <div class="card quote">
           <div class="stars">★★★★★</div>
-          <blockquote>"Hosting has been rock solid. Zero downtime since we migrated. Wish we switched sooner."</blockquote>
-          <div class="author">— [Client Name], [Company]</div>
+          <blockquote>"Words"</blockquote>
+          <div class="author">— [Client Name], [Business]</div>
         </div>
+
+        <!--
         <div class="card quote">
           <div class="stars">★★★★★</div>
           <blockquote>"Gorgeous design, blazing fast performance. Everything we asked for — and more."</blockquote>
@@ -353,6 +396,7 @@
           <blockquote>"Support replies in minutes. Not days. That alone is worth the price."</blockquote>
           <div class="author">— [Client Name], [Company]</div>
         </div>
+        -->
       </div>
     </div>
   </section>
@@ -361,20 +405,22 @@
   <section class="section contact" id="contact">
     <div class="container contact-inner">
       <div class="section-head reveal" style="text-align:left;">
+        <!--
         <span class="eyebrow">Get in Touch</span>
+        -->
         <h2>Let's build something <span class="accent-text">bold</span>.</h2>
         <p class="section-sub">
           Tell us about your project. We'll reply within one business day.
         </p>
 
         <ul class="contact-info">
-          <li><strong>Email:</strong> <a href="mailto:hello@crimsonhosting.com">hello@crimsonhosting.com</a></li>
-          <li><strong>Phone:</strong> <a href="tel:+1000000000">[+1 (000) 000-0000]</a></li>
-          <li><strong>Hours:</strong> Mon–Fri, 9am–6pm</li>
+          <li><strong>Email:</strong> <a href="mailto:hello@crimsonhosting.com">contact@crimsonhosting.com</a></li>
+          <li><strong>Hours:</strong> 24/7 Support</li>
         </ul>
       </div>
 
       <form class="contact-form reveal" id="contactForm" novalidate>
+        <!--
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your full name" required />
@@ -390,6 +436,7 @@
           <textarea id="message" name="message" rows="5" placeholder="Tell us about your project…" required></textarea>
           <small class="error" data-error-for="message"></small>
         </div>
+-->
         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
         <p class="form-success" id="formSuccess">Thanks — your message is on its way. We'll be in touch shortly.</p>
       </form>
@@ -397,6 +444,8 @@
   </section>
 
   <!-- ======================= FOOTER ======================= -->
+
+  
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
@@ -404,9 +453,10 @@
           <span class="logo-mark"></span>
           <span class="logo-text">Crimson<span class="accent">Hosting</span></span>
         </a>
-        <p>Web design, hosting, and performance for ambitious brands.</p>
+        <p>Web design, hosting, and marketing.</p>
       </div>
 
+      <!--
       <div class="footer-col">
         <h4>Navigate</h4>
         <a href="#hero">Home</a>
@@ -414,24 +464,28 @@
         <a href="#contact">Contact</a>
       </div>
 
-      <div class="footer-col">
+<div class="footer-col">
         <h4>Follow</h4>
         <a href="#">Twitter / X</a>
         <a href="#">LinkedIn</a>
         <a href="#">Instagram</a>
         <a href="#">GitHub</a>
       </div>
+-->
+
+
+      
 
       <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="mailto:hello@crimsonhosting.com">hello@crimsonhosting.com</a>
-        <a href="tel:+1000000000">[+1 (000) 000-0000]</a>
+        <h4>Contact Us</h4>
+        <a href="mailto:hello@crimsonhosting.com">contact@crimsonhosting.com</a>
+        <a href="tel:+1000000000"></a>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <span>© <span id="year"></span> Crimson Hosting. All rights reserved.</span>
-      <span>Crafted with care.</span>
+      
     </div>
   </footer>
 

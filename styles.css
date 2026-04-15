@@ -40,7 +40,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 
 /* -------- Layout helpers -------- */
 .container {
-  width: min(1200px, 92%);
+  width: min(3000px, 92%);
   margin-inline: auto;
 }
 
@@ -155,13 +155,17 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   -webkit-backdrop-filter: blur(14px);
   border-bottom-color: var(--border);
   padding: 12px 0;
+
 }
+
 
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
+
+
 
 .logo {
   display: flex;
@@ -169,15 +173,21 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   gap: 10px;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 4rem;
   letter-spacing: -0.01em;
 }
 .logo-mark {
-  width: 18px;
-  height: 18px;
+  
+  width: 70px;
+  height: 70px;
   border-radius: 5px;
-  background: linear-gradient(135deg, var(--crimson), var(--crimson-bright));
-  box-shadow: 0 0 20px var(--crimson-glow);
+  /*background: linear-gradient(135deg, var(--crimson), var(--crimson-bright));*/
+  background: url(Logo.png) center/cover;
+  /*box-shadow: 0 0 20px var(--crimson-glow);*/
+}
+
+.logo.scrolled{
+  display: none;
 }
 
 .nav-links {
@@ -629,7 +639,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: start;
+  align-items: center;
 }
 .contact-info {
   list-style: none;
@@ -702,7 +712,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .footer-inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns:  2fr  2fr;
   gap: 40px;
   padding-bottom: 40px;
   border-bottom: 1px solid var(--border);
@@ -734,7 +744,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 24px;
   color: var(--muted);
   font-size: 0.85rem;
