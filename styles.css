@@ -609,6 +609,18 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   color: var(--muted);
   transition: all var(--transition);
 }
+.team-card .socialsNum a {
+  width: 100px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  transition: all var(--transition);
+}
+
 .team-card .socials a:hover {
   background: var(--crimson);
   border-color: var(--crimson);
