@@ -13,20 +13,54 @@
 
   /* -------- Sticky navbar on scroll -------- */
   const navbar = document.getElementById('navbar');
-  const onScroll = () => {
-    if (window.scrollY > 20) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  const headerBrand = document.getElementById('headerBrand');
+  const brandSlot = document.getElementById('brandSlot');
+  let headerFrame = null;
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+  const mapRange = (value, start, end) => clamp((value - start) / (end - start), 0, 1);
+  const easeOutCubic = (value) => 1 - Math.pow(1 - value, 3);
 
- const logo = document.getElementById('logo');
-  const onScroll2 = () => {
-    if (window.scrollY > 67) logo.classList.add('scrolled');
-    else logo.classList.remove('scrolled');
+  const onScroll = () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 20) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+
+    if (headerBrand && brandSlot) {
+      // Brand collapses: starts at scrollY=180, fully gone by scrollY=600
+      const collapseProgress = easeOutCubic(mapRange(scrollY, 180, 600));
+      // Brand fades: starts a little after collapse begins
+      const fadeProgress = easeOutCubic(mapRange(scrollY, 220, 580));
+
+      const opacity = 1 - fadeProgress;
+      const blur = fadeProgress * 4;
+      const brandHeight = 110 - (collapseProgress * 110);
+      const brandGap = 18 - (collapseProgress * 18);
+
+      // Keep the navbar pinned to the top at all times — no drift
+      navbar.style.transform = 'translateY(0)';
+
+      // Collapse the brand slot height
+      brandSlot.style.setProperty('--brand-height', `${Math.max(0, brandHeight).toFixed(2)}px`);
+      brandSlot.style.setProperty('--brand-gap', `${Math.max(0, brandGap).toFixed(2)}px`);
+
+      // Fade/blur the brand in place (no positional drift on the logo itself)
+      headerBrand.style.setProperty('--brand-offset', '0px');
+      headerBrand.style.setProperty('--brand-opacity', opacity.toFixed(3));
+      headerBrand.style.setProperty('--brand-blur', `${blur.toFixed(2)}px`);
+      headerBrand.style.pointerEvents = opacity < 0.08 ? 'none' : '';
+    }
+
+    headerFrame = null;
   };
-  window.addEventListener('scroll', onScroll2, { passive: true });
-  onScroll2();
+
+  const scheduleHeaderUpdate = () => {
+    if (headerFrame !== null) return;
+    headerFrame = window.requestAnimationFrame(onScroll);
+  };
+
+  window.addEventListener('scroll', scheduleHeaderUpdate, { passive: true });
+  onScroll();
 
 
   /* -------- Mobile menu toggle -------- */
@@ -153,6 +187,13 @@
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  document.querySelectorAll('.team-card .socials a[href^="tel:"]').forEach(link => {
+    const digits = (link.getAttribute('href') || '').replace(/\D/g, '');
+    if (digits.length === 10) {
+      link.textContent = `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+    }
+  });
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -180,9 +221,30 @@
 
       if (!valid) return;
 
-      // Placeholder success — wire this up to your backend / email service
-      successMsg.classList.add('show');
-      form.reset();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      fetch('https://formspree.io/f/xrerewol', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      })
+      .then(res => {
+        if (res.ok) {
+          successMsg.classList.add('show');
+          form.reset();
+        } else {
+          alert('Something went wrong. Please try again or email us directly.');
+        }
+      })
+      .catch(() => {
+        alert('Network error. Please check your connection and try again.');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      });
     });
 
     // Clear errors as user types
@@ -191,4 +253,26 @@
       if (input) input.addEventListener('input', () => clearError(f));
     });
   }
+
+  /* -------- Collapsible pricing tiers (mobile only) -------- */
+  const pricingTiers = document.querySelectorAll('.pricing .tier');
+
+  // Open the popular (Silver) tier by default on mobile
+  if (window.innerWidth <= 820) {
+    const popular = document.querySelector('.pricing .tier.popular');
+    if (popular) popular.classList.add('open');
+  }
+
+  pricingTiers.forEach(tier => {
+    const summary = tier.querySelector('.tier-summary');
+    if (!summary) return;
+    summary.addEventListener('click', () => {
+      if (window.innerWidth > 820) return;
+      const isOpen = tier.classList.contains('open');
+      // Close all tiers, then open the clicked one if it was closed
+      pricingTiers.forEach(t => t.classList.remove('open'));
+      if (!isOpen) tier.classList.add('open');
+    });
+  });
+
 })();
