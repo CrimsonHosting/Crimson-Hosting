@@ -1057,6 +1057,21 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   }
 }
 
+/* -------- TOS agreement note under plan buttons -------- */
+.tos-agree {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: #6b6b80;
+  text-align: center;
+  line-height: 1.5;
+}
+.tos-agree a {
+  color: #dc2626;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.tos-agree a:hover { opacity: 0.8; }
+
 /* -------- Reduced motion -------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
