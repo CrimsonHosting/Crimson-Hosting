@@ -393,14 +393,37 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .feature p { color: var(--muted); margin: 0; font-size: 0.95rem; }
 
-/* -------- More Info button -------- */
+/* -------- More Info link -------- */
 .more-info-wrap {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 44px;
 }
-.more-info-wrap .btn {
-  min-width: 160px;
+.more-info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+.more-info-link:hover {
+  color: var(--text);
+  border-color: var(--crimson);
+  background: var(--crimson-soft);
+}
+.more-info-link svg {
+  opacity: 0.6;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.more-info-link:hover svg {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
 /* -------- Pricing -------- */
@@ -965,12 +988,13 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     text-align: center;
   }
 
-  /* More Info button full-width on mobile */
+  /* More Info link — mobile */
   .more-info-wrap {
-    margin: 30px 0 0;
+    margin: 28px 0 0;
   }
-  .more-info-wrap .btn {
+  .more-info-link {
     width: 100%;
+    justify-content: center;
   }
 
   /* Collapsible pricing tiers on mobile */
@@ -1079,4 +1103,35 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     transition-duration: 0.01ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* -------- Landscape mobile fixes (phone rotated sideways) -------- */
+@media (orientation: landscape) and (max-height: 500px) {
+
+  /* 1 — Pricing: force 3-column row, compact cards so nothing overflows */
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .pricing { gap: 10px; }
+  .pricing .tier { padding: 16px 14px; gap: 10px; }
+  .pricing .tier.popular { transform: none; }
+  .tier .amount { font-size: 2rem; }
+  .tier .per { font-size: 0.72rem; }
+  .tier .features { gap: 6px; }
+  .tier .features li { font-size: 0.8rem; }
+  .more-info-wrap { margin-top: 20px; }
+  .more-info-link { width: auto; }
+
+  /* 2 — Team: hide the empty spacer cell, center both cards side-by-side */
+  .team .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 300px));
+    justify-content: center;
+  }
+  .team .grid-4 > div:first-child { display: none; }
+
+  /* 3 — Phone numbers: keep on one line and scale down to fit the column */
+  a[href^="tel"] {
+    white-space: nowrap;
+    font-size: 0.7rem;
+    letter-spacing: 0;
+  }
+
 }

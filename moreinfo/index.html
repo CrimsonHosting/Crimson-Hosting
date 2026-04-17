@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="../Logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Details — Crimson Hosting</title>
+  <meta name="description" content="Full breakdown of what's included in each Crimson Hosting plan — content changes, review rounds, service scope, and turnaround times." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+
+    /* ── Page shell ── */
+    .pi-page {
+      padding: 200px 0 100px;
+      min-height: 100vh;
+    }
+    .pi-container {
+      width: min(1100px, 92%);
+      margin-inline: auto;
+    }
+
+    /* ── Back link ── */
+    .pi-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      margin-bottom: 48px;
+      transition: color var(--transition);
+    }
+    .pi-back:hover { color: var(--crimson-bright); }
+    .pi-back svg { flex-shrink: 0; }
+
+    /* ── Page header ── */
+    .pi-header {
+      margin-bottom: 72px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pi-header .eyebrow { margin-bottom: 16px; }
+    .pi-header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+    .pi-header p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* ── Section ── */
+    .pi-section {
+      margin-bottom: 80px;
+    }
+    .pi-section-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--crimson-bright);
+      margin: 0 0 10px;
+    }
+    .pi-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+    .pi-section-desc {
+      color: var(--muted);
+      font-size: 0.97rem;
+      margin: 0 0 36px;
+      line-height: 1.65;
+    }
+
+    /* ── Plan comparison grid (3 cols) ── */
+    .pi-plan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .pi-plan-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .pi-plan-card:hover {
+      border-color: rgba(220, 20, 60, 0.35);
+    }
+    .pi-plan-card.featured {
+      border-color: var(--crimson);
+      background: linear-gradient(180deg, var(--surface) 0%, rgba(220,20,60,0.07) 100%);
+      box-shadow: 0 0 30px -10px var(--crimson-glow);
+      position: relative;
+    }
+    .pi-plan-card.featured::before {
+      content: 'Best Value';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--crimson), var(--crimson-bright));
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .pi-plan-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 0 0 12px;
+      letter-spacing: 0.03em;
+    }
+    .pi-plan-count {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .pi-plan-card.featured .pi-plan-count {
+      color: var(--crimson-bright);
+      text-shadow: 0 0 20px var(--crimson-glow);
+    }
+    .pi-plan-unit {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* ── Two-column detail boxes ── */
+    .pi-detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .pi-detail-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+    }
+    .pi-detail-box--alert {
+      border-color: rgba(220, 20, 60, 0.3);
+      background: rgba(220, 20, 60, 0.05);
+    }
+    .pi-detail-box h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 14px;
+      letter-spacing: 0.01em;
+    }
+    .pi-detail-box--alert h4 { color: var(--crimson-bright); }
+    .pi-detail-box p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .pi-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .pi-list li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .pi-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--crimson);
+    }
+
+    /* ── Review Process: 3 plan cards ── */
+    .pi-review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .pi-review-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      transition: border-color var(--transition);
+    }
+    .pi-review-card:hover {
+      border-color: rgba(220, 20, 60, 0.3);
+    }
+    .pi-review-card.featured {
+      border-color: var(--crimson);
+      background: linear-gradient(180deg, var(--surface) 0%, rgba(220,20,60,0.07) 100%);
+    }
+    .pi-review-plan {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 18px;
+    }
+    .pi-review-card.featured .pi-review-plan {
+      color: var(--crimson-bright);
+    }
+
+    /* ── Service scope: two columns ── */
+    .pi-scope-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .pi-scope-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+    }
+    .pi-scope-box--warn {
+      border-color: rgba(220, 20, 60, 0.28);
+      background: rgba(220, 20, 60, 0.04);
+    }
+    .pi-scope-box h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 16px;
+    }
+    .pi-scope-box--warn h4 { color: var(--crimson-bright); }
+
+    /* ── Turnaround callout ── */
+    .pi-callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .pi-callout-icon {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      background: var(--crimson-soft);
+      border: 1.5px solid var(--crimson);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--crimson-bright);
+    }
+    .pi-callout-icon svg { width: 26px; height: 26px; }
+    .pi-callout-body h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 6px;
+    }
+    .pi-callout-body p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .pi-callout-body strong {
+      color: var(--text);
+    }
+
+    /* ── Back to plans CTA ── */
+    .pi-cta {
+      margin-top: 80px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .pi-cta p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .pi-page { padding: 170px 0 80px; }
+      .pi-header { margin-bottom: 48px; padding-bottom: 28px; }
+      .pi-section { margin-bottom: 60px; }
+      .pi-plan-grid,
+      .pi-review-grid { grid-template-columns: 1fr; }
+      .pi-detail-row,
+      .pi-scope-grid { grid-template-columns: 1fr; }
+      .pi-plan-card.featured { margin-top: 12px; }
+      .pi-callout { flex-direction: column; align-items: flex-start; gap: 20px; padding: 28px 24px; }
+      .pi-cta { flex-direction: column; align-items: flex-start; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar — identical structure to main page so scroll animation works -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-shell">
+      <div class="brand-slot" id="brandSlot">
+        <a href="../index.html" class="logo header-brand" id="headerBrand">
+          <span class="logo-mark"></span>
+          <span class="logo-text">Crimson<span class="accent">Hosting</span></span>
+        </a>
+      </div>
+      <div class="nav-row nav-inner">
+        <a href="../index.html#services" class="btn btn-ghost btn-sm">← Back to Plans</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pi-page">
+    <div class="pi-container">
+
+      <!-- ── Page header ── -->
+      <div class="pi-header">
+        <span class="eyebrow">Plan Details</span>
+        <h1>What's Included</h1>
+        <p>A full breakdown of content changes, review rounds, service scope, and update turnaround for every plan.</p>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SECTION 1 — Content Changes
+      ══════════════════════════════════════ -->
+      <div class="pi-section">
+        <p class="pi-section-label">Section 01</p>
+        <h2>Content Changes</h2>
+        <p class="pi-section-desc">Each plan includes a set number of content updates per billing month. Once the limit is reached, additional changes are billed separately.</p>
+
+        <!-- Per-plan counts -->
+        <div class="pi-plan-grid">
+          <div class="pi-plan-card">
+            <p class="pi-plan-name">Ember</p>
+            <div class="pi-plan-count">1</div>
+            <p class="pi-plan-unit">change / month</p>
+          </div>
+          <div class="pi-plan-card featured">
+            <p class="pi-plan-name">Crimson</p>
+            <div class="pi-plan-count">2</div>
+            <p class="pi-plan-unit">changes / month</p>
+          </div>
+          <div class="pi-plan-card">
+            <p class="pi-plan-name">Obsidian</p>
+            <div class="pi-plan-count">3</div>
+            <p class="pi-plan-unit">changes / month</p>
+          </div>
+        </div>
+
+        <!-- What counts / Overage -->
+        <div class="pi-detail-row">
+          <div class="pi-detail-box">
+            <h4>What counts as a content change</h4>
+            <ul class="pi-list">
+              <li>Text updates</li>
+              <li>Image replacements</li>
+              <li>Minor layout adjustments</li>
+            </ul>
+          </div>
+          <div class="pi-detail-box pi-detail-box--alert">
+            <h4>Going over your limit</h4>
+            <p>Additional changes beyond your monthly allowance are billed at <strong>$30 per change</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SECTION 2 — Review Process
+      ══════════════════════════════════════ -->
+      <div class="pi-section">
+        <p class="pi-section-label">Section 02</p>
+        <h2>Review Process</h2>
+        <p class="pi-section-desc">Before your site goes live, you'll have dedicated review rounds to request edits. Reviews included in your plan do not count toward your monthly content changes.</p>
+
+        <div class="pi-review-grid">
+          <!-- Ember -->
+          <div class="pi-review-card">
+            <p class="pi-review-plan">Ember</p>
+            <ul class="pi-list">
+              <li>1 final review after initial build</li>
+              <li>Review edits do not count toward content changes</li>
+              <li>After approval, further edits count toward the monthly content limit</li>
+            </ul>
+          </div>
+          <!-- Crimson -->
+          <div class="pi-review-card featured">
+            <p class="pi-review-plan">Crimson</p>
+            <ul class="pi-list">
+              <li>2 review rounds included</li>
+              <li>Review edits do not count toward content changes</li>
+              <li>After approval, further edits count toward the monthly content limit</li>
+            </ul>
+          </div>
+          <!-- Obsidian -->
+          <div class="pi-review-card">
+            <p class="pi-review-plan">Obsidian</p>
+            <ul class="pi-list">
+              <li>2 review rounds included</li>
+              <li>Review edits do not count toward content changes</li>
+              <li>After approval, further edits count toward the monthly content limit</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SECTION 3 — Monthly Service Scope
+      ══════════════════════════════════════ -->
+      <div class="pi-section">
+        <p class="pi-section-label">Section 03</p>
+        <h2>Monthly Service Scope</h2>
+        <p class="pi-section-desc">Your active subscription keeps your site running and maintained. Here's what that covers and what happens if it lapses.</p>
+
+        <div class="pi-scope-grid">
+          <div class="pi-scope-box">
+            <h4>What's included every month</h4>
+            <ul class="pi-list">
+              <li>Website hosting and maintenance</li>
+              <li>Full access to your website while subscription is active</li>
+              <li>Ongoing updates within your plan's monthly limits</li>
+            </ul>
+          </div>
+          <div class="pi-scope-box pi-scope-box--warn">
+            <h4>After subscription ends</h4>
+            <ul class="pi-list">
+              <li>Website access is tied to an active subscription. If canceled or unpaid, the website will be taken offline</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           SECTION 4 — Update Turnaround
+      ══════════════════════════════════════ -->
+      <div class="pi-section">
+        <p class="pi-section-label">Section 04</p>
+        <h2>Update Turnaround</h2>
+        <p class="pi-section-desc">Once a content change is submitted, here's how quickly you can expect it to be completed.</p>
+
+        <div class="pi-callout">
+          <div class="pi-callout-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          </div>
+          <div class="pi-callout-body">
+            <h4>24 – 72 hour completion window</h4>
+            <p>Updates are typically completed within <strong>24 to 72 hours</strong>, depending on plan tier and the complexity of the request. More involved changes may take longer, we'll communicate any delays proactively.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Bottom CTA ── -->
+      <div class="pi-cta">
+        <p>Ready to get started? Pick a plan and we'll reach out to get things moving.</p>
+        <a href="../index.html#services" class="btn btn-primary">View Plans</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../script.js"></script>
+
+</body>
+</html>
