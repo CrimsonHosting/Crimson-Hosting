@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="Logo.png">
+  <link rel="icon" type="image/webp" href="Logo.webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crimson Hosting</title>
   <meta name="description" content="Crimson Hosting builds fast, elegant websites and delivers reliable hosting, performance optimization, and ongoing support." />
+  <!-- Preconnect so DNS + TLS are ready before font CSS arrives -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <!-- Load fonts asynchronously — eliminates render-blocking request -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -244,9 +247,9 @@
         <!-- ITEM 1 -->
         <figure class="portfolio-item">
           <div class="compare" data-compare>
-            <img class="after" src="Joy In Christ After.png" alt="Joy in Christ website after redesign" />
+            <picture><source srcset="Joy In Christ After.webp" type="image/webp"><img class="after" src="Joy In Christ After.png" alt="Joy in Christ website after redesign" loading="lazy" /></picture>
             <div class="before-wrap">
-              <img class="before" src="Joy In Christ Before.png" alt="Joy in Christ website before redesign" />
+              <picture><source srcset="Joy In Christ Before.webp" type="image/webp"><img class="before" src="Joy In Christ Before.png" alt="Joy in Christ website before redesign" loading="lazy" /></picture>
             </div>
             <div class="slider" aria-hidden="true"></div>
             <span class="tag before-tag">Before</span>
@@ -261,9 +264,9 @@
         <!-- ITEM 2 -->
         <figure class="portfolio-item">
           <div class="compare" data-compare>
-            <img class="after" src="After Chilangos.png" alt="Chilangos website after redesign" />
+            <picture><source srcset="After Chilangos.webp" type="image/webp"><img class="after" src="After Chilangos.png" alt="Chilangos website after redesign" loading="lazy" /></picture>
             <div class="before-wrap">
-              <img class="before" src="Chilangos Before.png" alt="Chilangos website before redesign" />
+              <picture><source srcset="Chilangos Before.webp" type="image/webp"><img class="before" src="Chilangos Before.png" alt="Chilangos website before redesign" loading="lazy" /></picture>
             </div>
             <div class="slider" aria-hidden="true"></div>
             <span class="tag before-tag">Before</span>
@@ -278,9 +281,9 @@
         <!-- ITEM 3 -->
         <figure class="portfolio-item">
           <div class="compare" data-compare>
-            <img class="after" src="Creama After.png" alt="Creama website after redesign" />
+            <picture><source srcset="Creama After.webp" type="image/webp"><img class="after" src="Creama After.png" alt="Creama website after redesign" loading="lazy" /></picture>
             <div class="before-wrap">
-              <img class="before" src="Creama Before.png" alt="Creama website before redesign" />
+              <picture><source srcset="Creama Before.webp" type="image/webp"><img class="before" src="Creama Before.png" alt="Creama website before redesign" loading="lazy" /></picture>
             </div>
             <div class="slider" aria-hidden="true"></div>
             <span class="tag before-tag">Before</span>
@@ -347,7 +350,7 @@
       <div class="grid grid-4 reveal">
         <div></div> <!-- empty cell for spacing -->
         <div class="card team-card">
-          <div class="avatar"><img src="headshot2.png" alt="Team member" /></div>
+          <div class="avatar"><picture><source srcset="headshot2.webp" type="image/webp"><img src="headshot2.png" alt="Mohammed Suleiman" loading="lazy" width="120" height="120" /></picture></div>
           <h3>Mohammed Suleiman</h3>
           <p class="role">Co-Founder</p>
           <div class="socials"><a target="_blank" href="https://www.linkedin.com/in/msuleiman06/">in</a>
@@ -355,7 +358,7 @@
         </div>
 
         <div class="card team-card">
-          <div class="avatar"><img src="headshot.jpg" alt="Team member" /></div>
+          <div class="avatar"><picture><source srcset="headshot.webp" type="image/webp"><img src="headshot.jpg" alt="Elliot Scarengos" loading="lazy" width="120" height="120" /></picture></div>
           <h3>Elliot Scarengos</h3>
           <p class="role">Co-Founder</p>
           <div class="socials"><a target="_blank" href="https://www.linkedin.com/in/elliot-scarengos-5626073aa">in</a>
@@ -515,6 +518,11 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+    }
+  </script>
 </body>
 </html>

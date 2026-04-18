@@ -104,7 +104,18 @@
     const beforeWrap = el.querySelector('.before-wrap');
     const beforeImg = el.querySelector('.before');
     const slider = el.querySelector('.slider');
+
+    // Cache rect once — update only on resize (avoids forced reflow on every mouse move)
     let rect = el.getBoundingClientRect();
+    const refreshRect = () => { rect = el.getBoundingClientRect(); };
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(refreshRect).observe(el);
+    } else {
+      window.addEventListener('resize', refreshRect, { passive: true });
+    }
+
+    let rafPending = false;
+    let pendingX = null;
 
     const setPos = (pct) => {
       pct = Math.max(0, Math.min(100, pct));
@@ -118,10 +129,19 @@
       }
     };
 
-    const updateFromEvent = (clientX) => {
-      rect = el.getBoundingClientRect();
-      const pct = ((clientX - rect.left) / rect.width) * 100;
+    // Batch DOM writes through rAF — prevents layout thrashing on mousemove
+    const flushMove = () => {
+      const pct = ((pendingX - rect.left) / rect.width) * 100;
       setPos(pct);
+      rafPending = false;
+    };
+
+    const updateFromEvent = (clientX) => {
+      pendingX = clientX;
+      if (!rafPending) {
+        rafPending = true;
+        requestAnimationFrame(flushMove);
+      }
     };
 
     // default position
