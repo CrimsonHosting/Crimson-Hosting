@@ -916,6 +916,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 @media (max-width: 820px) {
   .section { padding: 90px 0; }
   .grid-3 { grid-template-columns: 1fr; }
+  .portfolio .grid-3 { grid-template-columns: 1fr; }
+  .compare { aspect-ratio: 3/2; }
   .pricing .tier.popular { transform: none; }
   .contact-inner { grid-template-columns: 1fr; gap: 40px; }
 
