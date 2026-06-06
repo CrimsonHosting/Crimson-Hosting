@@ -366,11 +366,27 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 
 /* -------- Grids -------- */
-.grid { display: grid; gap: 24px; }
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid {
+  display: grid;
+  gap: 24px;
+}
 
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.portfolio .grid-3 {
+  grid-template-columns: repeat(2, minmax(0, 500px));
+  justify-content: center;
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
 /* -------- About / Features -------- */
 .about { background: var(--bg-alt); }
 .feature .icon {
